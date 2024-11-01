@@ -8,12 +8,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://i.pinimg.com/originals/3d/c3/87/3dc387151b115cf7ae0cf344b8e40eff.gif'); /* Set the background image */
-            background-size: cover; /* Cover the whole body */
-            background-position: center; /* Center the background */
+            background-image: url('https://i.pinimg.com/originals/3d/c3/87/3dc387151b115cf7ae0cf344b8e40eff.gif'); 
+            background-size: cover; 
+            background-position: center; 
             margin: 0;
             padding: 20px;
-            color: white; /* Change text color for visibility */
+            color: white; 
         }
         header {
             text-align: center;
@@ -21,20 +21,20 @@
         }
         main {
             text-align: center;
-            background-color: transparent; /* Semi-transparent background for readability */
+            background-color: transparent; 
             padding: 20px;
             border-radius: 10px;
         }
         h2 {
             font-size: 45px;
-	  font-family: 'Luminari', cursive; /* Change the font size here */
+	  font-family: 'Luminari', cursive; 
         }
         select, button {
             padding: 10px;
             margin-top: 10px;
         }
         .audio-controls {
-            margin-top: 20px; /* Space between the button and audio controls */
+            margin-top: 20px; 
         }
     </style>
 </head>
@@ -69,15 +69,15 @@
 
             switch (mood) {
                 case 'happy':
-                    // Array of happy songs
+                    
                     const happySongs = [
-                        'The Weeknd - Blinding Lights (Official Video).mp3', // Replace with the correct path
+                        'The Weeknd - Blinding Lights (Official Video).mp3', 
                         'Aaradhike Video Song Soubin Shahir E4 Entertainment Johnpaul George.mp3',
                         'Vikaara Naukayumayi Video Song Amaram Mammootty KJ Yesudas Raveendran Kaithapram.mp3',
                         'Kanneer Poovinte 1080p Kireedam Mohanlal Parvathi Thilakan Kaviyoor Ponnamma Sankaradi.mp3',
                         'Tere Bina Zindagi Se Koi Shikwa To Nahin Lata Mangeshkar, Kishore Kumar Aandhi 1975 Songs.mp3'
                     ];
-                    // Select a random happy song
+        
                     const randomHappySong = happySongs[Math.floor(Math.random() * happySongs.length)];
                     audioSource.src = randomHappySong;
                     break;
