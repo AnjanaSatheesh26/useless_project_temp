@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOD MUSIC PLAYER</title>  
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.pinimg.com/originals/3d/c3/87/3dc387151b115cf7ae0cf344b8e40eff.gif'); /* Set the background image */
+            background-size: cover; /* Cover the whole body */
+            background-position: center; /* Center the background */
+            margin: 0;
+            padding: 20px;
+            color: white; /* Change text color for visibility */
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        main {
+            text-align: center;
+            background-color: transparent; /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 45px;
+	  font-family: 'Luminari', cursive; /* Change the font size here */
+        }
+        select, button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .audio-controls {
+            margin-top: 20px; /* Space between the button and audio controls */
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>Select Your Mood</h2>
+        <select id="moodSelect">
+            <option value="">--Select Mood--</option>
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="energetic">Energetic</option>
+            <option value="calm">Calm</option>
+            <option value="hopeless">Hopeless</option>
+            <option value="motivated">Motivated</option>
+            <option value="anxious">Anxious</option> 
+        </select>
+        <button onclick="playSong()">Play Song</button>
+
+        <div class="audio-controls">
+            <audio id="audioPlayer" controls loop>
+                <source id="audioSource" src="" type="audio/mpeg">
+            </audio>
+        </div>
+    </main>
+
+    <script>
+        function playSong() {
+            const mood = document.getElementById('moodSelect').value;
+            const audioPlayer = document.getElementById('audioPlayer');
+            const audioSource = document.getElementById('audioSource');
+
+            switch (mood) {
+                case 'happy':
+                    // Array of happy songs
+                    const happySongs = [
+                        'The Weeknd - Blinding Lights (Official Video).mp3', // Replace with the correct path
+                        'Aaradhike Video Song Soubin Shahir E4 Entertainment Johnpaul George.mp3',
+                        'Vikaara Naukayumayi Video Song Amaram Mammootty KJ Yesudas Raveendran Kaithapram.mp3',
+                        'Kanneer Poovinte 1080p Kireedam Mohanlal Parvathi Thilakan Kaviyoor Ponnamma Sankaradi.mp3',
+                        'Tere Bina Zindagi Se Koi Shikwa To Nahin Lata Mangeshkar, Kishore Kumar Aandhi 1975 Songs.mp3'
+                    ];
+                    // Select a random happy song
+                    const randomHappySong = happySongs[Math.floor(Math.random() * happySongs.length)];
+                    audioSource.src = randomHappySong;
+                    break;
+                case 'sad':
+                    const sadSongs = [];
+                    const randomSadSong = sadSongs[Math.floor(Math.random() * sadSongs.length)];
+                    audioSource.src = randomSadSong;                    
+                    break;
+                case 'energetic':
+                    const energeticSongs = [];
+                    const randomEnergeticSong = energeticSongs[Math.floor(Math.random() * energeticSongs.length)];
+                    audioSource.src = randomEnergeticSong;                    
+                    break;
+                case 'calm':
+                    const calmSongs = [];
+                    const randomCalmSong = calmSongs[Math.floor(Math.random() * calmSongs.length)];
+                    audioSource.src = randomCalmSong;                    
+                    break;
+                case 'hopeless':
+                    const hopelessSongs = [];
+                    const randomHopelessSong = hopelessSongs[Math.floor(Math.random() * hopelessSongs.length)];
+                    audioSource.src = randomHopelessSong;                    
+                    break;
+                case 'motivated':
+                    const motivatedSongs = ['Chemmeen Malayalam Film song -Manna De singing -Maanasa maine varu- Hq-Video.mp3'];
+                    const randomMotivatedSong = motivatedSongs[Math.floor(Math.random() * motivatedSongs.length)];
+                    audioSource.src = randomMotivatedSong;                    
+                    break;
+                default:
+                    alert('Please select a mood!');
+                    return; // Exit the function if no mood is selected
+            }
+
+            audioPlayer.load(); // Load the new audio source
+            audioPlayer.play(); // Play the selected song
+        }
+    </script>
+</body>
+</html>
